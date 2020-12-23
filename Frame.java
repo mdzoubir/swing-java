@@ -2,6 +2,7 @@ package saviez_vous;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,6 +18,7 @@ public class Frame implements ActionListener{
 	
 	JPanel panel;
 	JFrame  frame;
+	Container c;
 	JButton button;
 	JLabel label;
 	JLabel label2;
@@ -24,20 +26,19 @@ public class Frame implements ActionListener{
 	ArrayList<String> listMessage = new ArrayList<>();
 	ArrayList<Color> color = new ArrayList<>();
 	Frame(){
+		
 		panel = new JPanel();
 		frame = new JFrame();
+		c = frame.getContentPane();
 		frame.setVisible(true);
 		frame.setSize(500,500);
 		frame.setLayout(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		
 		panel.setBounds(25, 25, 420, 400);
-		frame.add(panel);
-		//panel.setBackground(Color.black);
+		
+		c.add(panel);
 		panel.setLayout(new BorderLayout());
-		
-		
 		
 		//text
 		listMessage.add("Etre amoureux vous rend fainéant");
@@ -73,8 +74,11 @@ public class Frame implements ActionListener{
 		color.add(Color.cyan);
 		color.add(Color.darkGray);
 		color.add(Color.green);
+		color.add(Color.blue);
+		color.add(Color.magenta);
 		
 		panel.setBackground(Color.blue);
+		c.setBackground(Color.blue);
 		
 	}
 
@@ -90,6 +94,9 @@ public class Frame implements ActionListener{
 		//color
 		int randomX = rand.nextInt(color.size());
 	    Color randomE = color.get(randomX);
-	    frame.setBackground(randomE);
+	    panel.setBackground(randomE);
+	    button.setForeground(randomE);
+	    
+	    c.setBackground(randomE);
 	}
 }

@@ -22,7 +22,7 @@ public class Frame implements ActionListener{
 	JLabel label2;
 	JLabel label3;
 	ArrayList<String> listMessage = new ArrayList<>();
-	ArrayList<String> color = new ArrayList<>();
+	ArrayList<Color> color = new ArrayList<>();
 	Frame(){
 		panel = new JPanel();
 		frame = new JFrame();
@@ -68,13 +68,13 @@ public class Frame implements ActionListener{
 		
 		
 		
-		color.add("red");
-		color.add("black");
-		color.add("blue");
-		color.add("yellow");
-		color.add("white");
+		color.add(Color.red);
+		color.add(Color.black);
+		color.add(Color.cyan);
+		color.add(Color.darkGray);
+		color.add(Color.green);
 		
-		panel.setBackground(Color.black);
+		panel.setBackground(Color.blue);
 		
 	}
 
@@ -89,8 +89,7 @@ public class Frame implements ActionListener{
 		
 		//color
 		int randomX = rand.nextInt(color.size());
-	    String randomE = color.get(randomX);
-	    String x= "Color."+ randomE;
-		
+	    Color randomE = color.get(randomX);
+	    frame.setBackground(randomE);
 	}
 }

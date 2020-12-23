@@ -3,12 +3,16 @@ package saviez_vous;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -34,12 +38,11 @@ public class Frame implements ActionListener{
 		frame.setSize(500,500);
 		frame.setLayout(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		panel.setBounds(25, 25, 420, 400);
-		
 		c.add(panel);
+		c.setLayout(new GridLayout(1,1));
 		panel.setLayout(new BorderLayout());
-		
+		panel.setBorder(BorderFactory.createEmptyBorder(25, 25, 25, 25));
+		panel.setBounds(25, 25, 420, 400);
 		//text
 		listMessage.add("Etre amoureux vous rend fainéant");
 		listMessage.add("La biére ne fait pas prendre du vente");
@@ -54,7 +57,6 @@ public class Frame implements ActionListener{
 		panel.add(BorderLayout.NORTH ,label3);
 		label3.setFont(new Font("Comic Sans MS" , Font.PLAIN , 19));
 		//button
-		
 		
 		button = new JButton();
 		button.setText("MONTRER UN AUTRE FAIT");
@@ -79,6 +81,8 @@ public class Frame implements ActionListener{
 		
 		panel.setBackground(Color.blue);
 		c.setBackground(Color.blue);
+		
+		
 		
 	}
 
